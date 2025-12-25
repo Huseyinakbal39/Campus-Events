@@ -1,0 +1,42 @@
+export const EVENTS = [
+  {
+    id: "1",
+    title: "CTF Workshop",
+    club: "SAÜSİBER",
+    startTime: "2025-12-20 14:00",
+    location: "Müh. Fak. Lab",
+    tags: ["Cyber", "Kariyer"],
+  },
+  {
+    id: "2",
+    title: "AI & Kariyer Söyleşisi",
+    club: "AI Club",
+    startTime: "2025-12-22 16:00",
+    location: "Konferans Salonu",
+    tags: ["AI", "Kariyer"],
+  },
+  {
+    id: "3",
+    title: "Girişimcilik 101",
+    club: "Entrepreneur Club",
+    startTime: "2025-12-23 13:00",
+    location: "TTO Salonu",
+    tags: ["Girişimcilik", "Kariyer"],
+  },
+  {
+    id: "4",
+    title: "Müzik Gecesi",
+    club: "Music Club",
+    startTime: "2025-12-24 19:00",
+    location: "Kültür Merkezi",
+    tags: ["Müzik"],
+  },
+  {
+    id: "5",
+    title: "Tasarım Atölyesi",
+    club: "Design Club",
+    startTime: "2025-12-26 15:00",
+    location: "Stüdyo 2",
+    tags: ["Tasarım"],
+  },
+];
