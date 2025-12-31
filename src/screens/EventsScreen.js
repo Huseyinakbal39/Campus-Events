@@ -114,7 +114,10 @@ export default function EventsScreen({ navigation }) {
         keyExtractor={(item) => item.id}
         contentContainerStyle={{ padding: 16, paddingTop: 8, paddingBottom: 6 }}
         renderItem={({ item }) => (
-          <EventCard event={item} onPress={() => navigation.navigate("EventDetail", { event: item })} />
+          <EventCard event={item} onPress={() => navigation.navigate("EventDetail", { event: item })
+        } onPressClub={(clubName) =>
+          navigation.navigate("ClubDetail", { clubName })
+        }/>
         )}
         ListEmptyComponent={
           <View style={{ paddingHorizontal: 16, paddingTop: 10 }}>

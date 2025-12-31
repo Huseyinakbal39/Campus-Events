@@ -4,7 +4,7 @@ import { theme } from "../theme";
 import { useEventStore } from "../store/eventStore";
 
 
-export default function EventCard({ event, onPress }) {
+export default function EventCard({ event, onPress , onPressClub}) {
   const tags = event.tags || [];
   const isLiked = useEventStore((s) => s.isLiked(event.id));
   const isGoing = useEventStore((s) => s.isGoing(event.id));
@@ -23,10 +23,19 @@ export default function EventCard({ event, onPress }) {
               {isGoing ? "✓ Katılacağım" : ""}{isLiked ? (isGoing ? "  •  " : "") + "♥ Beğenildi" : ""}
             </Text>
           )}
+          
       </View>
 
   <View style={styles.badge}>
-    <Text style={styles.badgeText}>{event.club}</Text>
+    <Pressable
+            onPress={() => onPressClub && onPressClub(event.club)}
+            style={({ pressed }) => [
+            
+              pressed && { opacity: 0.8, transform: [{ scale: 0.97 }] },
+            ]}
+          >
+            <Text style={styles.badgeText}>{event.club}</Text>
+          </Pressable>
   </View>
 </View>
 

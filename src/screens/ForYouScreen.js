@@ -58,7 +58,10 @@ export default function ForYouScreen({ navigation }) {
         keyExtractor={(item) => item.id}
         contentContainerStyle={{ padding: 16, paddingTop: 8 }}
         renderItem={({ item }) => (
-          <EventCard event={item} onPress={() => navigation.navigate("EventDetail", { event: item })} />
+          <EventCard event={item} onPress={() => navigation.navigate("EventDetail", { event: item })}
+          onPressClub={(clubName) =>
+    navigation.navigate("ClubDetail", { clubName })
+  } />
         )}
       />
     </Screen>

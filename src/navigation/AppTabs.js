@@ -2,7 +2,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import { theme } from "../theme";
-
+import ClubsScreen from "../screens/ClubsScreen";
 import EventsScreen from "../screens/EventsScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import ForYouScreen from "../screens/ForYouScreen";
@@ -37,16 +37,19 @@ export default function AppTabs() {
             iconName = focused ? "heart" : "heart-outline";
           } else if (route.name === "Events") {
             iconName = focused ? "bookmark" : "bookmark-outline";
-          } else if (route.name === "Profile") {
+          } else if(route.name === 'Clubs'){
+           iconName = focused ? "people" : "people-outline"; 
+          }else if (route.name === "Profile") {
             iconName = focused ? "person" : "person-outline";
           }
 
-          return <Ionicons name={iconName} size={size} color={color} />;
+          return <Ionicons name={iconName} size={size+1} color={color} />;
         },
       })}
     >
       <Tab.Screen name="ForYou" component={ForYouScreen} options={{ title: "Senin için" }} />
       <Tab.Screen name="Events" component={EventsScreen} options={{ title: "Etkinlikler" }} />
+      <Tab.Screen name="Clubs" component={ClubsScreen} options={{ title: "Kulüpler" }}/>
       <Tab.Screen name="Profile" component={ProfileScreen} options={{ title: "Profil" }} />
     </Tab.Navigator>
   );
